@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dam.ptut.iutunice"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="dam.ptut.iutunice.App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!-- Splash screen -->
+        <activity
+            android:name="dam.ptut.iutunice.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- The main/home activity (it has no parent activity) -->
+        <activity
+            android:name="dam.ptut.iutunice.Menu.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="dam.ptut.iutunice.IconMenuActivity"
+            android:label="@string/title_activity_icon_menu" >
+        </activity>
+        <!-- A child of the main activity -->
+        <activity
+            android:name="dam.ptut.iutunice.Parameter.ParameterActivity"
+            android:label="@string/title_activity_parameter"
+            android:parentActivityName="dam.ptut.iutunice.Menu.MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Menu.MainActivity" />
+        </activity>
+        <!-- A child of the main activity -->
+        <activity
+            android:name="dam.ptut.iutunice.IutWindows.IutWindowsActivity"
+            android:label="@string/title_activity_iut_windows"
+            android:parentActivityName="dam.ptut.iutunice.Menu.MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Menu.MainActivity" />
+        </activity>
+        <!-- A child of the IutWindowsActivity activity -->
+        <activity
+            android:name="dam.ptut.iutunice.IutWindows.SurveyIutActivity"
+            android:label="@string/title_activity_survey_iut"
+            android:parentActivityName="dam.ptut.iutunice.IutWindows.IutWindowsActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.IutWindows.IutWindowsActivity" />
+        </activity>
+        <!-- A child of the IutWindowsActivity activity -->
+        <activity
+            android:name="dam.ptut.iutunice.IutWindows.SearchFormationActivity"
+            android:label="@string/title_activity_search_formation"
+            android:parentActivityName="dam.ptut.iutunice.IutWindows.IutWindowsActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.IutWindows.IutWindowsActivity" />
+        </activity>
+        <!-- A child of the SearchFormationActivity activity -->
+        <activity
+            android:name="dam.ptut.iutunice.IutWindows.DetailsFormationActivity"
+            android:label="@string/title_activity_details_formation"
+            android:parentActivityName="dam.ptut.iutunice.IutWindows.SearchFormationActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.IutWindows.SearchFormationActivity" />
+        </activity>
+        <activity
+            android:name="dam.ptut.iutunice.Menu.IconMenuCarouselFragment"
+            android:label="@string/title_activity_icon_menu_liste_fragment" >
+        </activity>
+        <activity
+            android:name="dam.ptut.iutunice.Menu.IconMenuListFragment"
+            android:label="@string/title_activity_icon_menu_list_framgment" >
+        </activity>
+        <!-- A child of the main activity -->
+        <activity
+            android:name="dam.ptut.iutunice.Twitter.TwitterActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_twitter"
+            android:parentActivityName="dam.ptut.iutunice.Menu.MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Menu.MainActivity" />
+        </activity>
+        <!-- A child of the main activity -->
+        <activity
+            android:name="dam.ptut.iutunice.PostBac.PostBacActivity"
+            android:label="@string/title_activity_post_bac"
+            android:parentActivityName="dam.ptut.iutunice.Menu.MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Menu.MainActivity" />
+        </activity>
+        <activity
+            android:name="dam.ptut.iutunice.Calendar.CalendarActivity"
+            android:label="@string/title_activity_calendar" >
+        </activity>
+
+        <!-- A child of the main activity -->
+        <activity
+            android:name="dam.ptut.iutunice.Maps.MapActivity"
+            android:label="@string/title_activity_map"
+            android:parentActivityName="dam.ptut.iutunice.Menu.MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Menu.MainActivity" />
+        </activity>
+
+        <!-- A child of the map activity -->
+        <activity
+            android:name="dam.ptut.iutunice.Maps.BusActivity"
+            android:label="@string/title_activity_bus"
+            android:parentActivityName="dam.ptut.iutunice.Maps.MapActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Maps.MapActivity" />
+        </activity>
+        <!-- A child of the main activity -->
+        <activity
+            android:name="dam.ptut.iutunice.Grade.GradeActivity"
+            android:label="@string/title_activity_grade"
+            android:parentActivityName="dam.ptut.iutunice.Menu.MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Menu.MainActivity" />
+        </activity>
+        <!-- A child of the GradeActivity activity -->
+        <activity
+            android:name="dam.ptut.iutunice.Grade.DetailsGradeActivity"
+            android:label="@string/title_activity_details_grade"
+            android:parentActivityName="dam.ptut.iutunice.Grade.GradeActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Grade.GradeActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBU61XWeylwh0Mxn9ugScCNVa1DVlGMvOI" />
+
+        <activity
+            android:name="dam.ptut.iutunice.Suaps.SuapsActivity"
+            android:label="@string/title_activity_suaps"
+            android:parentActivityName="dam.ptut.iutunice.Menu.MainActivity" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Menu.MainActivity" />
+        </activity>
+        <activity
+            android:name="dam.ptut.iutunice.Directory.DirectoryActivity"
+            android:label="@string/title_activity_directory" >
+        </activity>
+        <activity
+            android:name="dam.ptut.iutunice.Suaps.SuapsDetails"
+            android:label="@string/title_activity_suaps_details"
+            android:parentActivityName="dam.ptut.iutunice.Suaps.SuapsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dam.ptut.iutunice.Suaps.SuapsActivity" />
+        </activity>
+    </application>
+
+</manifest>
