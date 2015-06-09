@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -127,15 +128,15 @@ public class SuapsDetails extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-				// SuapsChildActivities childActivities = child.getDaysArray()
-				// .get(position);
+				SuapsChildActivities childActivities = child.getDaysArray()
+						.get(position);
 				int i = 0;
 				int j = 0;
 				int a = 0;
 
 				for (SuapsChildActivities suapsChildActivities : daysArray) {
 					suapsChildActivities = daysArray.get(i);
-					// Log.v("test", "test = " + suapsChildActivities.Day);
+					//Log.v("test", "test = " + suapsChildActivities.Day);
 					i++;
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							SuapsDetails.this);
